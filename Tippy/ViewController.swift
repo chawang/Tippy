@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        billField.becomeFirstResponder()
     
         let tipDefault = defaults.integer(forKey: "tipDefault")
         tipControl.selectedSegmentIndex = tipDefault
