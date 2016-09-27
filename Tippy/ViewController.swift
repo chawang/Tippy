@@ -41,12 +41,15 @@ class ViewController: UIViewController {
     
         let tipDefault = defaults.integer(forKey: "tipDefault")
         tipControl.selectedSegmentIndex = tipDefault
-        
+        self.splitBillView.alpha = 0
         setBackgroundColor()
     }
     
     @IBAction func onTap(_ sender: AnyObject) {
         view.endEditing(true)
+        UIView.animate(withDuration: 1, animations: {
+            self.splitBillView.alpha = 1
+        })
     }
 
     @IBAction func calculateTipOnChange(_ sender: AnyObject) {
