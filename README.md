@@ -14,28 +14,29 @@ The following **required** functionality is complete:
 * [x] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
-* [ ] UI animations
+* [x] UI animations. A split bill view for multiple people will animate onto the screen.
 * [ ] Remembering the bill amount across app restarts (if <10mins)
 * [ ] Using locale-specific currency and currency thousands separators.
-* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Keyboard is always visible and the bill amount is always the first responder. The user does not have to tap anywhere to use the app. The user can simply launch and start typing.
 
 The following **additional** features are implemented:
 
-- [x] User can choose between 2 background colors
-- [x] Enabled clear button for easy text field editing
-- [x] Dark themed keyboard easier viewing and thematic styling
+- [x] App icon added for style
+- [x] The user can choose between a light theme or a dark theme
+- [x] The bill textfield has a clear button for easier editing
+- [x] Dark themed keyboard for easier viewing and thematic styling
 
 ## Video Walkthrough 
 
 Here's a walkthrough of an implemented user story:
 
-<img src='https://github.com/chawang/Tippy/blob/master/Tippy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/chawang/Tippy/blob/master/ezgif.com-tippy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Ezgif](http://ezgif.com/) and [Quicktime](http://www.quicktime-download.info/)
 
 ## Notes
 
-Outlets would occasionally be lost while editing and rebinding to them was not obvious.
+Outlets would occasionally be lost while editing and rebinding to them was not initially obvious.
 
 ## License
 
