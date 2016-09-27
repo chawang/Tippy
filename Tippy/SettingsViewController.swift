@@ -64,10 +64,9 @@ class SettingsViewController: UIViewController {
     func setBackgroundColor()
     {
         let colorDefault = defaults.integer(forKey: "backgroundColor")
-        
         if (colorDefault == 0)
-        {theView.backgroundColor = UIColor.cyan}
+        {theView.backgroundColor = UIColor.white}
         if (colorDefault == 1)
-        {theView.backgroundColor = UIColor.orange}
+        {theView.backgroundColor = UIColor.black}
     }
 }

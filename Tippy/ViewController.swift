@@ -17,8 +17,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var settingsButtons: UIBarButtonItem!
     @IBOutlet var theView: UIView!
+    @IBOutlet weak var splitBillView: UIView!
+    @IBOutlet weak var twoPerson: UILabel!
+    @IBOutlet weak var threePerson: UILabel!
+    @IBOutlet weak var fourPerson: UILabel!
+    
     let defaults = UserDefaults.standard
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,14 +58,17 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        twoPerson.text = String(format: "$%.2f", total/2)
+        threePerson.text = String(format: "$%.2f", total/3)
+        fourPerson.text = String(format: "$%.2f", total/4)
     }
     
     func setBackgroundColor()
     {
         let colorDefault = defaults.integer(forKey: "backgroundColor")
         if (colorDefault == 0)
-        {theView.backgroundColor = UIColor.cyan}
+        {theView.backgroundColor = UIColor.white}
         if (colorDefault == 1)
-        {theView.backgroundColor = UIColor.orange}
+        {theView.backgroundColor = UIColor.black}
     }
 }
