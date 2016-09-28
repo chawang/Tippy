@@ -14,16 +14,17 @@ The following **required** functionality is complete:
 * [x] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
+
 * [x] UI animations. (A split bill view for multiple people will animate onto the screen when the keyboard is dismissed)
 * [x] Remembering the bill amount across app restarts. (if <10mins)
 * [ ] Using locale-specific currency and currency thousands separators.
-* [x] Keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use the app. The user can just launch the app and start typing.
+* [x] Keyboard is always visible and the bill amount is always the first responder. The user does not have to tap anywhere to use the app. The user can just launch the app and start typing.
 
 The following **additional** features are implemented:
 
 - [x] App icon added for style.
-- [x] Enabled clear button for easy text field editing.
 - [x] User can choose between a light theme or a dark theme.
+- [x] Enabled clear button for easier text field editing and removed the border around the text field.
 
 ## Video Walkthrough
 
