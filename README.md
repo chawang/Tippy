@@ -1,10 +1,10 @@
 # Pre-work - *Tippy*
 
-**Tippy** is a tip calculator application for iOS.
+**Tippy** is an iOS tip calculator.
 
 Submitted by: **Charles Wang**
 
-Time spent: **5** hours spent in total
+Time spent: **7** hours spent in total
 
 ## User Stories
 
@@ -14,18 +14,18 @@ The following **required** functionality is complete:
 * [x] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
-* [ ] UI animations
-* [ ] Remembering the bill amount across app restarts (if <10mins)
+* [x] UI animations. (A split bill view for multiple people will animate onto the screen when the keyboard is dismissed)
+* [x] Remembering the bill amount across app restarts. (if <10mins)
 * [ ] Using locale-specific currency and currency thousands separators.
-* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use the app. The user can just launch the app and start typing.
 
 The following **additional** features are implemented:
 
-- [x] User can choose between 2 background colors
-- [x] Enabled clear button for easy text field editing
-- [x] Dark themed keyboard easier viewing and thematic styling
+- [x] App icon added for style.
+- [x] Enabled clear button for easy text field editing.
+- [x] User can choose between a light theme or a dark theme.
 
-## Video Walkthrough 
+## Video Walkthrough
 
 Here's a walkthrough of an implemented user story:
 
@@ -35,7 +35,7 @@ GIF created with [Ezgif](http://ezgif.com/) and [Quicktime](http://www.quicktime
 
 ## Notes
 
-Outlets would occasionally be lost while editing and rebinding to them was not obvious.
+Outlets would occasionally be lost while editing and needing to rebind to them was not initially obvious.
 
 ## License
 

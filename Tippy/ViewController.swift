@@ -27,7 +27,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
+        shouldFillBillAmount()
+        calculateTip()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +38,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         billField.becomeFirstResponder()
     
         let tipDefault = defaults.integer(forKey: "tipDefault")
@@ -45,14 +47,55 @@ class ViewController: UIViewController {
         setBackgroundColor()
     }
     
+    func shouldFillBillAmount()
+    {
+        let theLastDate = defaults.object(forKey:"lastDateOpened") as? Date
+        let now = Date()
+        var interval = DateInterval.init(start: theLastDate!, end: now)
+        
+        let timeInterval = interval.duration
+        let i = Int(timeInterval)
+        if (i < 600)
+        {
+            if (defaults.object(forKey: "BillAmount") != nil) {
+                let billAmount = defaults.double(forKey: "BillAmount")
+                billField.text = String(format: "%.2f", billAmount)
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        defaults.set(Date(), forKey: "lastDateOpened")
+    }
+    
     @IBAction func onTap(_ sender: AnyObject) {
         view.endEditing(true)
+        shouldFillBillAmount()
+        
         UIView.animate(withDuration: 1, animations: {
             self.splitBillView.alpha = 1
         })
     }
 
     @IBAction func calculateTipOnChange(_ sender: AnyObject) {
+        let tipValues = [0.15, 0.2, 0.25]
+
+        let bill = Double(billField.text!) ?? 0
+        let tip = bill * tipValues[tipControl.selectedSegmentIndex]
+        let total = bill + tip
+        
+        defaults.set(billField.text, forKey: "BillAmount")
+        defaults.synchronize()
+        
+        tipLabel.text = String(format: "$%.2f", tip)
+        totalLabel.text = String(format: "$%.2f", total)
+        twoPerson.text = String(format: "$%.2f", total/2)
+        threePerson.text = String(format: "$%.2f", total/3)
+        fourPerson.text = String(format: "$%.2f", total/4)
+    }
+    
+    func calculateTip()
+    {
         let tipValues = [0.15, 0.2, 0.25]
         
         let bill = Double(billField.text!) ?? 0
